@@ -47,6 +47,7 @@ public class PlanetFollower : MonoBehaviour {
 	private void Awake() {
 		transform.localPosition = topDownPosition;
 		transform.localRotation = Quaternion.Euler(topDownAngle);
+		Camera.main.fieldOfView = 45;
 	}
 
 	private void SetOffset(float zoomLevel) {
@@ -132,9 +133,6 @@ public class PlanetFollower : MonoBehaviour {
 	}
 
 	public void AngledView() {
-		// if(currentPlanet) {
-		// 	ResetPlanet(currentPlanet);
-		// }
 		UnFollowPlanet();
 		transform.localPosition = angledViewPosition;
 		transform.localRotation = Quaternion.Euler(angledViewAngle);
@@ -269,9 +267,6 @@ public class PlanetFollower : MonoBehaviour {
 							puffer: false
 						); // set back to original radius
 					
-						Debug.Log(previousIndex);
-						Debug.Log(currentIndex);
-						Debug.Log(index);
 						SolarSystemController.Instance.PlanetRotators[index].MoonRotators[i].ClearTrail();
 					}
 				}
@@ -286,6 +281,23 @@ public class PlanetFollower : MonoBehaviour {
 
 		while (elapsedTime < time) {
 			transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition, ((elapsedTime * elapsedTime * elapsedTime * (elapsedTime  * (6f * elapsedTime - 15f) + 10f)) / 
+				(time * time * time * (time * (6f * time - 15f) + 10f))));
+			Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 100, ((elapsedTime * elapsedTime * elapsedTime * (elapsedTime  * (6f * elapsedTime - 15f) + 10f)) / 
+				(time * time * time * (time * (6f * time - 15f) + 10f))));
+			// if(elapsedTime > 1.5f) {
+			// 	StartCoroutine(NormalizeFieldOfView(2));
+			// }
+			elapsedTime += Time.deltaTime;
+			yield return null;
+		}
+		StartCoroutine(NormalizeFieldOfView(2));
+	}
+
+	private IEnumerator NormalizeFieldOfView(float time) {
+		float elapsedTime = 0;
+
+		while (elapsedTime < time) {
+			Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60, ((elapsedTime * elapsedTime * elapsedTime * (elapsedTime  * (6f * elapsedTime - 15f) + 10f)) / 
 				(time * time * time * (time * (6f * time - 15f) + 10f))));
 			elapsedTime += Time.deltaTime;
 			yield return null;
