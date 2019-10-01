@@ -1,0 +1,10 @@
+{
+    "planetName": "Venus Planet",
+    "index": 1,
+    "radius": 0.060520000755786899,
+    "distanceToSun": 1082.0,
+    "orbitalPeriodInDays": 224.6999969482422,
+    "inclinationAngle": 3.390000104904175,
+    "minutesToCompleteRotation": 323569.40625,
+    "axialTilt": 177.0
+}

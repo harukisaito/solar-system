@@ -1,0 +1,10 @@
+{
+    "planetName": "Jupiter Planet",
+    "index": 4,
+    "radius": 0.7149199843406677,
+    "distanceToSun": 7786.0,
+    "orbitalPeriodInDays": 4331.0,
+    "inclinationAngle": 1.2999999523162842,
+    "minutesToCompleteRotation": 596.0,
+    "axialTilt": 3.130000114440918
+}

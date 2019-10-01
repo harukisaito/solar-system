@@ -1,0 +1,10 @@
+{
+    "planetName": "Mercury Planet",
+    "index": 0,
+    "radius": 0.02439500018954277,
+    "distanceToSun": 579.0,
+    "orbitalPeriodInDays": 88.0,
+    "inclinationAngle": 7.0,
+    "minutesToCompleteRotation": 84450.0,
+    "axialTilt": 2.109999895095825
+}

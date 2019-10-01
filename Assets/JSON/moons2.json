@@ -1,0 +1,15 @@
+{
+    "Items": [
+        {
+            "moonName": "Luna",
+            "index": 0,
+            "planetIndex": 2,
+            "radius": 0.0173799991607666,
+            "distanceToPlanet": 3.8440001010894777,
+            "orbitalPeriodInDays": 27.299999237060548,
+            "inclinationAngle": 5.144999980926514,
+            "minutesToCompleteRotation": 39312.0,
+            "axialTilt": 1.5
+        }
+    ]
+}

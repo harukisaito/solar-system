@@ -1,0 +1,59 @@
+{
+    "Items": [
+        {
+            "moonName": "Charon",
+            "index": 0,
+            "planetIndex": 8,
+            "radius": 0.006060000043362379,
+            "distanceToPlanet": 0.17535999417304994,
+            "orbitalPeriodInDays": 6.38700008392334,
+            "inclinationAngle": 119.78299713134766,
+            "minutesToCompleteRotation": 9197.2802734375,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Styx",
+            "index": 1,
+            "planetIndex": 8,
+            "radius": 0.00007999999797903001,
+            "distanceToPlanet": 0.42656001448631289,
+            "orbitalPeriodInDays": 20.160999298095704,
+            "inclinationAngle": 120.30999755859375,
+            "minutesToCompleteRotation": 29031.83984375,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Nix",
+            "index": 2,
+            "planetIndex": 8,
+            "radius": 0.00024500000290572643,
+            "distanceToPlanet": 0.4869399964809418,
+            "orbitalPeriodInDays": 24.854000091552736,
+            "inclinationAngle": 119.63300323486328,
+            "minutesToCompleteRotation": 25789.759765625,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Kerberos",
+            "index": 3,
+            "planetIndex": 8,
+            "radius": 0.00009500000305706635,
+            "distanceToPlanet": 0.5778300166130066,
+            "orbitalPeriodInDays": 32.16699981689453,
+            "inclinationAngle": 119.88899993896485,
+            "minutesToCompleteRotation": 46320.48046875,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Hydra",
+            "index": 4,
+            "planetIndex": 8,
+            "radius": 0.0002500000118743628,
+            "distanceToPlanet": 0.647379994392395,
+            "orbitalPeriodInDays": 38.20100021362305,
+            "inclinationAngle": 119.74199676513672,
+            "minutesToCompleteRotation": 55009.44140625,
+            "axialTilt": 0.0
+        }
+    ]
+}

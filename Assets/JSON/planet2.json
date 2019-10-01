@@ -1,0 +1,10 @@
+{
+    "planetName": "Earth Planet",
+    "index": 2,
+    "radius": 0.06378000229597092,
+    "distanceToSun": 1496.0,
+    "orbitalPeriodInDays": 365.20001220703127,
+    "inclinationAngle": 0.0,
+    "minutesToCompleteRotation": 1436.0,
+    "axialTilt": 23.5
+}

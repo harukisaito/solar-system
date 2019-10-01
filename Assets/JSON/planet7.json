@@ -1,0 +1,10 @@
+{
+    "planetName": "Neptune Planet",
+    "index": 7,
+    "radius": 0.247639998793602,
+    "distanceToSun": 44951.0,
+    "orbitalPeriodInDays": 59800.0,
+    "inclinationAngle": 1.7699999809265137,
+    "minutesToCompleteRotation": 966.0,
+    "axialTilt": 28.31999969482422
+}

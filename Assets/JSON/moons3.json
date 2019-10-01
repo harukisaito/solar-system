@@ -1,0 +1,26 @@
+{
+    "Items": [
+        {
+            "moonName": "Phobos",
+            "index": 0,
+            "planetIndex": 3,
+            "radius": 0.000055500000598840415,
+            "distanceToPlanet": 0.09376999735832215,
+            "orbitalPeriodInDays": 0.3333333134651184,
+            "inclinationAngle": 26.399999618530275,
+            "minutesToCompleteRotation": 479.9989929199219,
+            "axialTilt": 1.5
+        },
+        {
+            "moonName": "Deimos",
+            "index": 1,
+            "planetIndex": 3,
+            "radius": 0.00003099999958067201,
+            "distanceToPlanet": 0.2343599945306778,
+            "orbitalPeriodInDays": 1.25,
+            "inclinationAngle": 27.579999923706056,
+            "minutesToCompleteRotation": 1800.0,
+            "axialTilt": 1.5
+        }
+    ]
+}

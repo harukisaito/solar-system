@@ -1,0 +1,10 @@
+{
+    "planetName": "Uranus Planet",
+    "index": 6,
+    "radius": 0.2555899918079376,
+    "distanceToSun": 28725.0,
+    "orbitalPeriodInDays": 30589.0,
+    "inclinationAngle": 0.7699999809265137,
+    "minutesToCompleteRotation": 1034.0,
+    "axialTilt": 98.0
+}

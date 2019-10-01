@@ -1,0 +1,25 @@
+Base path: /Applications/Unity/Hub/Editor/2019.1.8f1/Unity.app/Contents
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=14 insize=1435 outsize=6489 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=7909 outsize=5241 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=7313 outsize=3141 ok=1
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=14 insize=2059 outsize=789 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=841 outsize=785 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=18299 outsize=11321 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=9637 outsize=16465 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=11489 outsize=25117 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1806 outsize=1145 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2044 outsize=1509 ok=1
+Cmd: compileSnippet
+  api=15 type=1 insize=11538 outsize=0 kw=FINALPASS pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1

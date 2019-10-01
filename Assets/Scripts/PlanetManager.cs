@@ -1,95 +1,303 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class PlanetManager : MonoBehaviour {
 
-	[SerializeField] float minutesToCompleteRotation;
-	[SerializeField] float axialTilt;
-	[SerializeField] List<MoonManager> moons;
-	[SerializeField] List<NameLabel> moonLabels;
-	[SerializeField] NameLabelButton planetLabel;
+	// time it takes to rotate around the sun
+	[SerializeField] private float orbitalPeriodInDays;
+	// the angle relative to the suns rotational axis;
+	[SerializeField] private float inclinationAngle;
 
-	private float speed = 1;
-	private float size = 1;
-	private float divider = 1;
+	// time it takes to complete one rotation around its axis
+	[SerializeField] private float minutesToCompleteRotation;
+	// the tilt of the axis relative to the suns axis
+	[SerializeField] private float axialTilt;
 
-	private Vector3 originalSize;
-	private float originalDistance;
+	[SerializeField] private List<MoonManager> moons;
+	[SerializeField] private PlanetLabelController planetLabel;
+	[SerializeField] private PlanetCameraPivot cameraPivot;
+	
 
-	public float Speed {
-		get {return speed;}
+	public int Index {
+		get {
+			return index;
+		}
 		set {
-			speed = value;
+			index = value;
+		}
+	}
+	public float Radius {
+		get {
+			return radius;
+		}
+		set {
+			radius = value;
+			float diameter = radius * 2;
+			transform.localScale = new Vector3(
+				diameter,
+				diameter,
+				diameter
+			);
+			if(planetLabel != null) {
+				planetLabel.Radius = radius;
+			}
 		}
 	}
 
-	public float Size {
-		get {return size;}
+	public float DistanceToSun {
+		get {
+			return distanceToSun;
+		}
 		set {
-			size = value;
-			SetSize(value);
+			distanceToSun = value;
+			transform.localPosition = new Vector3(
+				value,
+				transform.localPosition.y,
+				transform.localPosition.z
+			);
+			if(cameraPivot != null) {
+				cameraPivot.DistanceToSun = distanceToSun;
+			}
+			if(planetLabel != null) {
+				planetLabel.DistanceToSun = distanceToSun;
+			}
+			if(moons != null) {
+				foreach(var moon in moons) {
+					if(moon != null) {
+						moon.MoonRotator.DistanceToSun = distanceToSun;
+						moon.ClearTrail();
+					}
+				}
+			}
 		}
 	}
 
-	public float DistanceDivider {
-		get {return divider;}
-		set {
-			divider = value;
-			SetDistance(value);
+	public float OriginalDistanceToSun {
+		get {
+			return originalDistance;
 		}
 	}
 
+	public float OriginalRadius {
+		get {
+			return originalRadius;
+		}
+	}
+
+	public PlanetLabelController Label {
+		get {
+			return planetLabel;
+		}
+		set {
+			planetLabel = value;
+		}
+	}
+
+	public PlanetCameraPivot CameraPivot {
+		get {
+			return cameraPivot;
+		}
+		set {
+			cameraPivot = value;
+		}
+	}
+
+	public PlanetRotator PlanetRotator {
+		get {
+			if(planetRotator == null) {
+				Setup();
+			}
+			return planetRotator;
+		}
+	}
 	public List<MoonManager> Moons {
-		get { return moons; }
-		set { moons = value; }
+		get {
+			return moons;
+		}
+		set {
+			moons = value;
+		}
 	}
 
-	public List<NameLabel> MoonLabels {
-		get { return moonLabels; }
-		set { moonLabels = value; }
+	public float OrbitalPeriodInDays {
+		get {
+			return orbitalPeriodInDays;
+		}
+		set {
+			orbitalPeriodInDays = value;
+		}
 	}
 
-	public Vector3 OriginalSize {
-		get { return originalSize; }
+	public float InclinationAngle {
+		get {
+			return inclinationAngle;
+		}
+		set {
+			inclinationAngle = value;
+		}
 	}
 
-	public NameLabelButton PlanetLabel {
-		get { return planetLabel; }
-		set { planetLabel = value; }
+	public float MinutesToCompleteRotation {
+		get {
+			return minutesToCompleteRotation;
+		}
+		set {
+			minutesToCompleteRotation = value;
+		}
 	}
 
+	public float AxialTilt {
+		get {
+			return axialTilt;
+		}
+		set {
+			axialTilt = value;
+		}
+	}
+
+	private PlanetRotator planetRotator;
+	private TrailRenderer trailRenderer;
+
+	private int index;
+
+	private float radius;
+	private float originalRadius;
+	private float distanceToSun;
+	private float originalDistance;
 	private float angle;
-
-	private void Awake()
-	{
-		originalSize = transform.localScale;
-		originalDistance = transform.localPosition.x;
-	}
+	private float orbitalPeriodInSeconds;
 
 	private void Start()
 	{
+		if(planetRotator == null) {
+			Setup();
+		}
+		SetMoonRotatorPosition();
+		originalDistance = distanceToSun;
+		originalRadius = radius;
+
+		trailRenderer = GetComponent<TrailRenderer>();
+		trailRenderer.sharedMaterial = UIManager.Instance.TrailMaterial;
+		trailRenderer.time = (orbitalPeriodInSeconds);
 		angle = 360 / (minutesToCompleteRotation * 60f);
 		transform.localRotation = Quaternion.Euler(0, 0, axialTilt);
 	}
 
 	private void Update()
 	{
-		float x = angle * Time.deltaTime * speed;
+		float x = angle * Time.deltaTime * SolarMetrics.speed;
 		transform.Rotate(0, x, 0);
 	}
 
-	private void SetSize(float size)
-	{
-		transform.localScale = originalSize * size;
+	public void Setup() {
+		SetupRotationCenter();
+		SetupCameraPivot();
+		SetupLabel();
 	}
 
-	private void SetDistance(float divider)
-	{
-		transform.localPosition = new Vector3(
-			originalDistance * (1 / divider), 
-			transform.localPosition.y, 
-			transform.localPosition.z
-		);
+	private void SetupRotationCenter() {
+		GameObject rotatorGameObject = new GameObject();
+		rotatorGameObject.name = name;
+		planetRotator = rotatorGameObject.AddComponent<PlanetRotator>();
+		transform.SetParent(planetRotator.transform);
+		orbitalPeriodInSeconds = orbitalPeriodInDays * 24 * 3600;
+		planetRotator.orbitalPeriodInSeconds = orbitalPeriodInSeconds;
+		planetRotator.InclinationAngle = inclinationAngle;
 	}
+
+	private void SetupCameraPivot() {
+		GameObject cameraPivotGameObject = new GameObject();
+		cameraPivotGameObject.name = "Camera Pivot";
+		cameraPivot = cameraPivotGameObject.AddComponent<PlanetCameraPivot>();
+		cameraPivot.transform.SetParent(planetRotator.transform);
+		cameraPivot.DistanceToSun = distanceToSun;
+	}
+	
+	private void SetupLabel() {
+		GameObject planetLabelGameObject = new GameObject();
+		planetLabelGameObject.name = "Planet Label";
+		planetLabel = planetLabelGameObject.AddComponent<PlanetLabelController>();
+		planetLabel.transform.SetParent(planetRotator.transform);
+		planetLabel.Radius = radius;
+		planetLabel.Index = index;
+	}
+
+	private void SetMoonRotatorPosition() {
+		foreach(var moon in moons) {
+			moon.MoonRotator.DistanceToSun = distanceToSun;
+			moon.ClearTrail();
+		}
+	}
+
+	public void SetInclinationAngle(bool activate) {
+		if(activate) {
+			planetRotator.InclinationAngle = inclinationAngle;
+		}
+		else {
+			planetRotator.InclinationAngle = 0;
+		}
+	}
+
+	public void ClearTrail() {
+		trailRenderer.Clear();
+	}
+
+	public void ShowMoons(bool enabled) {
+		if(moons.Count == 0) {
+			return;
+		}
+		foreach(var moon in moons) {
+			moon.Show(enabled);
+		}
+	}
+
+	public void ShowMoonLabels(bool enabled) {
+		if(moons.Count == 0) {
+			return;
+		}
+		foreach(var moon in moons) {
+			moon.ShowLabel(enabled);
+		}
+	}
+
+	public void SetRelativeDistance() {
+		foreach(var moon in moons) {
+			moon.MoonRotator.DistanceToSun = distanceToSun;
+			moon.ClearTrail();
+			if(SolarSystemController.Instance.currentState == State.RelativeDistance) {
+				moon.Radius = 5;
+				moon.DistanceToPlanet = radius + 
+					moon.OriginalDistanceToPlanet * 10;
+			}
+			else if(SolarSystemController.Instance.currentState == State.Normal) {
+				moon.Radius = moon.OriginalRadius;
+				moon.DistanceToPlanet = moon.OriginalDistanceToPlanet;
+			}
+		}
+	}
+
+	public void Reset() {
+		Radius = originalRadius;
+		DistanceToSun = originalDistance;
+		ClearTrail();
+	}
+
+	public void OnSettingSpeed(object o, EventArgs e) {
+		trailRenderer.time = 
+			orbitalPeriodInSeconds / SolarMetrics.speed;
+		foreach(var moon in moons) {
+			moon.SetTrailLength();
+		}
+	}
+
+	public void SetLabelSize(State currentState) {
+		planetLabel.SetLabelSize(currentState);
+		foreach(var moon in moons) {
+			moon.SetLabelSize(currentState);
+		}
+	}
+
 }

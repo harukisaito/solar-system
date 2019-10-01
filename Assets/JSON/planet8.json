@@ -1,0 +1,10 @@
+{
+    "planetName": "Pluto Dwarf",
+    "index": 8,
+    "radius": 0.011850000359117985,
+    "distanceToSun": 59064.0,
+    "orbitalPeriodInDays": 90560.0,
+    "inclinationAngle": 17.200000762939454,
+    "minutesToCompleteRotation": 9201.599609375,
+    "axialTilt": 119.5
+}

@@ -1,0 +1,81 @@
+{
+    "Items": [
+        {
+            "moonName": "Mimas",
+            "index": 0,
+            "planetIndex": 5,
+            "radius": 0.001979999942705035,
+            "distanceToPlanet": 1.855389952659607,
+            "orbitalPeriodInDays": 0.9419999718666077,
+            "inclinationAngle": 28.27400016784668,
+            "minutesToCompleteRotation": 1356.47998046875,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Enceladus",
+            "index": 1,
+            "planetIndex": 5,
+            "radius": 0.002520000096410513,
+            "distanceToPlanet": 2.3794798851013185,
+            "orbitalPeriodInDays": 1.3700000047683716,
+            "inclinationAngle": 26.708999633789064,
+            "minutesToCompleteRotation": 1972.800048828125,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Tethys",
+            "index": 2,
+            "planetIndex": 5,
+            "radius": 0.005309999920427799,
+            "distanceToPlanet": 2.946190118789673,
+            "orbitalPeriodInDays": 1.8869999647140504,
+            "inclinationAngle": 27.81999969482422,
+            "minutesToCompleteRotation": 2717.280029296875,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Dione",
+            "index": 3,
+            "planetIndex": 5,
+            "radius": 0.005615000147372484,
+            "distanceToPlanet": 3.7739601135253908,
+            "orbitalPeriodInDays": 2.7360000610351564,
+            "inclinationAngle": 26.7189998626709,
+            "minutesToCompleteRotation": 3939.840087890625,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Rhea",
+            "index": 4,
+            "planetIndex": 5,
+            "radius": 0.0076350001618266109,
+            "distanceToPlanet": 5.271080017089844,
+            "orbitalPeriodInDays": 4.51800012588501,
+            "inclinationAngle": 27.045000076293947,
+            "minutesToCompleteRotation": 6505.919921875,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Titan",
+            "index": 5,
+            "planetIndex": 5,
+            "radius": 0.025745000690221788,
+            "distanceToPlanet": 12.218700408935547,
+            "orbitalPeriodInDays": 15.944999694824219,
+            "inclinationAngle": 27.04800033569336,
+            "minutesToCompleteRotation": 22960.80078125,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Iapetus",
+            "index": 6,
+            "planetIndex": 5,
+            "radius": 0.007350000087171793,
+            "distanceToPlanet": 35.60820007324219,
+            "orbitalPeriodInDays": 79.32150268554688,
+            "inclinationAngle": 17.280000686645509,
+            "minutesToCompleteRotation": 114222.9609375,
+            "axialTilt": 0.0
+        }
+    ]
+}

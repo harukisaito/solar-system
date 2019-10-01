@@ -1,0 +1,10 @@
+{
+    "planetName": "Mars Planet",
+    "index": 3,
+    "radius": 0.033959999680519107,
+    "distanceToSun": 2279.0,
+    "orbitalPeriodInDays": 687.0,
+    "inclinationAngle": 1.850000023841858,
+    "minutesToCompleteRotation": 1477.0,
+    "axialTilt": 25.0
+}

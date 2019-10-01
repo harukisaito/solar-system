@@ -1,0 +1,10 @@
+{
+    "planetName": "Saturn Planet",
+    "index": 5,
+    "radius": 0.6026800274848938,
+    "distanceToSun": 14335.0,
+    "orbitalPeriodInDays": 10747.0,
+    "inclinationAngle": 2.490000009536743,
+    "minutesToCompleteRotation": 642.0,
+    "axialTilt": 26.700000762939454
+}

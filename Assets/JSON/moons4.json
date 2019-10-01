@@ -1,0 +1,92 @@
+{
+    "Items": [
+        {
+            "moonName": "Metis",
+            "index": 0,
+            "planetIndex": 4,
+            "radius": 0.02410000003874302,
+            "distanceToPlanet": 1.2885199785232545,
+            "orbitalPeriodInDays": 0.2985999882221222,
+            "inclinationAngle": 2.0169999599456789,
+            "minutesToCompleteRotation": 429.9840087890625,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Adrastea",
+            "index": 1,
+            "planetIndex": 4,
+            "radius": 0.02410000003874302,
+            "distanceToPlanet": 1.2899999618530274,
+            "orbitalPeriodInDays": 0.3021000027656555,
+            "inclinationAngle": 2.0169999599456789,
+            "minutesToCompleteRotation": 435.02398681640627,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Amalthea",
+            "index": 2,
+            "planetIndex": 4,
+            "radius": 0.02410000003874302,
+            "distanceToPlanet": 1.8136600255966187,
+            "orbitalPeriodInDays": 0.5001000165939331,
+            "inclinationAngle": 2.0169999599456789,
+            "minutesToCompleteRotation": 720.1439819335938,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Thebe",
+            "index": 3,
+            "planetIndex": 4,
+            "radius": 0.02410000003874302,
+            "distanceToPlanet": 2.224519968032837,
+            "orbitalPeriodInDays": 0.675000011920929,
+            "inclinationAngle": 2.0169999599456789,
+            "minutesToCompleteRotation": 24032.16015625,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Io",
+            "index": 4,
+            "planetIndex": 4,
+            "radius": 0.018300000578165056,
+            "distanceToPlanet": 4.2170000076293949,
+            "orbitalPeriodInDays": 1.7690999507904053,
+            "inclinationAngle": 2.2130000591278078,
+            "minutesToCompleteRotation": 2547.50390625,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Europa",
+            "index": 5,
+            "planetIndex": 4,
+            "radius": 0.015604999847710133,
+            "distanceToPlanet": 6.710299968719482,
+            "orbitalPeriodInDays": 3.5511999130249025,
+            "inclinationAngle": 1.7910000085830689,
+            "minutesToCompleteRotation": 5113.72802734375,
+            "axialTilt": 0.10000000149011612
+        },
+        {
+            "moonName": "Ganymede",
+            "index": 6,
+            "planetIndex": 4,
+            "radius": 0.02631000056862831,
+            "distanceToPlanet": 10.704000473022461,
+            "orbitalPeriodInDays": 7.154600143432617,
+            "inclinationAngle": 2.2139999866485597,
+            "minutesToCompleteRotation": 10302.6240234375,
+            "axialTilt": 0.0
+        },
+        {
+            "moonName": "Callisto",
+            "index": 7,
+            "planetIndex": 4,
+            "radius": 0.02410000003874302,
+            "distanceToPlanet": 18.82699966430664,
+            "orbitalPeriodInDays": 16.68899917602539,
+            "inclinationAngle": 2.0169999599456789,
+            "minutesToCompleteRotation": 24032.16015625,
+            "axialTilt": 0.0
+        }
+    ]
+}
